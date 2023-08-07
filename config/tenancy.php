@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-use Stancl\Tenancy\Middleware;
+use App\Models\Tenant;
 use Stancl\Tenancy\Resolvers;
+use Stancl\Tenancy\Middleware;
 use Stancl\Tenancy\Enums\RouteMode;
 
 return [
@@ -11,7 +12,7 @@ return [
      * Configuration for the models used by Tenancy.
      */
     'models' => [
-        'tenant' => Stancl\Tenancy\Database\Models\Tenant::class,
+        'tenant' => Tenant::class,
         'domain' => Stancl\Tenancy\Database\Models\Domain::class,
 
         /**
@@ -39,6 +40,7 @@ return [
     'central_domains' => [
         '127.0.0.1',
         'localhost',
+        'fresh-v4-project.test',
     ],
 
     'identification' => [
