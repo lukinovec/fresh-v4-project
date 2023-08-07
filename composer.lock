@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa322c53454393ed775cfe4807d54a50",
+    "content-hash": "362a5d5b0bba9816c1c3787980aa0bcc",
     "packages": [
         {
             "name": "brick/math",
@@ -5562,6 +5562,59 @@
     ],
     "packages-dev": [
         {
+            "name": "facade/ignition-contracts",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facade/ignition-contracts.git",
+                "reference": "3c921a1cdba35b68a7f0ccffc6dffc1995b18267"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facade/ignition-contracts/zipball/3c921a1cdba35b68a7f0ccffc6dffc1995b18267",
+                "reference": "3c921a1cdba35b68a7f0ccffc6dffc1995b18267",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^v2.15.8",
+                "phpunit/phpunit": "^9.3.11",
+                "vimeo/psalm": "^3.17.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facade\\IgnitionContracts\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://flareapp.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Solution contracts for Ignition",
+            "homepage": "https://github.com/facade/ignition-contracts",
+            "keywords": [
+                "contracts",
+                "flare",
+                "ignition"
+            ],
+            "support": {
+                "issues": "https://github.com/facade/ignition-contracts/issues",
+                "source": "https://github.com/facade/ignition-contracts/tree/1.0.2"
+            },
+            "time": "2020-10-16T08:27:54+00:00"
+        },
+        {
             "name": "fakerphp/faker",
             "version": "v1.23.0",
             "source": {
@@ -7778,6 +7831,72 @@
             "time": "2023-06-28T13:24:59+00:00"
         },
         {
+            "name": "spatie/invade",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/invade.git",
+                "reference": "d0a9c895a96152549d478a7e3420e19039eef038"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/invade/zipball/d0a9c895a96152549d478a7e3420e19039eef038",
+                "reference": "d0a9c895a96152549d478a7e3420e19039eef038",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^1.20",
+                "phpstan/phpstan": "^1.4",
+                "spatie/ray": "^1.28"
+            },
+            "type": "library",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "phpstan-extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Invade\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP function to work with private properties and methods",
+            "homepage": "https://github.com/spatie/invade",
+            "keywords": [
+                "invade",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/invade/tree/1.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-07-05T09:31:00+00:00"
+        },
+        {
             "name": "spatie/laravel-ignition",
             "version": "2.2.0",
             "source": {
@@ -7868,6 +7987,221 @@
                 }
             ],
             "time": "2023-06-28T13:51:52+00:00"
+        },
+        {
+            "name": "stancl/jobpipeline",
+            "version": "v2.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/archtechx/jobpipeline.git",
+                "reference": "71fb23746298a8d9c62a27652fe4ea3020b46cca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/archtechx/jobpipeline/zipball/71fb23746298a8d9c62a27652fe4ea3020b46cca",
+                "reference": "71fb23746298a8d9c62a27652fe4ea3020b46cca",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0|^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "ext-redis": "*",
+                "orchestra/testbench": "^7.0|^8.0",
+                "spatie/valuestore": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stancl\\JobPipeline\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Štancl",
+                    "email": "samuel.stancl@gmail.com"
+                }
+            ],
+            "description": "Turn any series of jobs into Laravel listeners.",
+            "support": {
+                "issues": "https://github.com/archtechx/jobpipeline/issues",
+                "source": "https://github.com/archtechx/jobpipeline/tree/v2.0.0-rc1"
+            },
+            "time": "2023-03-16T21:14:57+00:00"
+        },
+        {
+            "name": "stancl/tenancy",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:tenancy-for-laravel/v4.git",
+                "reference": "e3b59ae2b596e2adc0e81750c51f30de698f7159"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tenancy-for-laravel/v4/zipball/e3b59ae2b596e2adc0e81750c51f30de698f7159",
+                "reference": "e3b59ae2b596e2adc0e81750c51f30de698f7159",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "facade/ignition-contracts": "^1.0.2",
+                "illuminate/support": "^10.1",
+                "php": "^8.2",
+                "ramsey/uuid": "^4.7.3",
+                "spatie/ignition": "^1.4",
+                "spatie/invade": "^1.1",
+                "stancl/jobpipeline": "2.0.0-rc1",
+                "stancl/virtualcolumn": "^1.3.1"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^3.6.0",
+                "laravel/framework": "^10.1",
+                "league/flysystem-aws-s3-v3": "^3.12.2",
+                "nunomaduro/larastan": "^2.4",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^1.21",
+                "spatie/invade": "^1.1",
+                "spatie/valuestore": "^1.2.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Stancl\\Tenancy\\TenancyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Tenancy": "Stancl\\Tenancy\\Facades\\Tenancy",
+                        "GlobalCache": "Stancl\\Tenancy\\Facades\\GlobalCache"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stancl\\Tenancy\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Stancl\\Tenancy\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "docker-up": [
+                    "PHP_VERSION=8.2 docker-compose up -d"
+                ],
+                "docker-down": [
+                    "PHP_VERSION=8.2 docker-compose down"
+                ],
+                "docker-rebuild": [
+                    "PHP_VERSION=8.2 docker-compose up -d --no-deps --build"
+                ],
+                "docker-m1": [
+                    "ln -s docker-compose-m1.override.yml docker-compose.override.yml"
+                ],
+                "coverage": [
+                    "open coverage/phpunit/html/index.html"
+                ],
+                "phpstan": [
+                    "vendor/bin/phpstan"
+                ],
+                "phpstan-pro": [
+                    "vendor/bin/phpstan --pro"
+                ],
+                "cs": [
+                    "php-cs-fixer fix --config=.php-cs-fixer.php"
+                ],
+                "test": [
+                    "PHP_VERSION=8.2 ./test --no-coverage"
+                ],
+                "test-full": [
+                    "PHP_VERSION=8.2 ./test"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Štancl",
+                    "email": "samuel@archte.ch"
+                }
+            ],
+            "description": "Automatic multi-tenancy for your Laravel application.",
+            "keywords": [
+                "laravel",
+                "multi-database",
+                "multi-tenancy",
+                "tenancy"
+            ],
+            "support": {
+                "source": "https://github.com/tenancy-for-laravel/v4/tree/master",
+                "issues": "https://github.com/tenancy-for-laravel/v4/issues"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/stancl"
+                },
+                {
+                    "type": "custom",
+                    "url": "https://tenancyforlaravel.com/donate"
+                }
+            ],
+            "time": "2023-08-03T15:51:53+00:00"
+        },
+        {
+            "name": "stancl/virtualcolumn",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/archtechx/virtualcolumn.git",
+                "reference": "0b108903b51711ff9f0357458dc3eb03398eb894"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/archtechx/virtualcolumn/zipball/0b108903b51711ff9f0357458dc3eb03398eb894",
+                "reference": "0b108903b51711ff9f0357458dc3eb03398eb894",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^9.0|^10.0",
+                "illuminate/support": "^9.0|^10.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.0|^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stancl\\VirtualColumn\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Štancl",
+                    "email": "samuel.stancl@gmail.com"
+                }
+            ],
+            "description": "Eloquent virtual column.",
+            "support": {
+                "issues": "https://github.com/archtechx/virtualcolumn/issues",
+                "source": "https://github.com/archtechx/virtualcolumn/tree/v1.3.1"
+            },
+            "time": "2023-02-16T10:34:42+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -7993,8 +8327,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "stancl/tenancy": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
