@@ -128,7 +128,9 @@ return [
         Stancl\Tenancy\Bootstrappers\BatchTenancyBootstrapper::class,
         // Stancl\Tenancy\Bootstrappers\PrefixCacheTenancyBootstrapper::class,
         // Stancl\Tenancy\Bootstrappers\UrlTenancyBootstrapper::class,
-        // Stancl\Tenancy\Bootstrappers\SessionTenancyBootstrapper::class,
+        Stancl\Tenancy\Bootstrappers\UrlBindingBootstrapper::class,
+        Stancl\Tenancy\Bootstrappers\SessionTenancyBootstrapper::class,
+        Stancl\Tenancy\Bootstrappers\Integrations\FortifyRouteTenancyBootstrapper::class,
         // Stancl\Tenancy\Bootstrappers\MailTenancyBootstrapper::class, // Queueing mail requires using QueueTenancyBootstrapper with $forceRefresh set to true
         // Stancl\Tenancy\Bootstrappers\RedisTenancyBootstrapper::class, // Note: phpredis is needed
     ],
@@ -280,7 +282,7 @@ return [
          * disable asset() helper tenancy and explicitly use tenant_asset() calls in places
          * where you want to use tenant-specific assets (product images, avatars, etc).
          */
-        'asset_helper_tenancy' => true,
+        'asset_helper_tenancy' => false,
     ],
 
     /**
