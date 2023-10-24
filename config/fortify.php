@@ -1,7 +1,12 @@
 <?php
 
-use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
+use App\Providers\RouteServiceProvider;
+use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromUnwantedDomains;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
 
 return [
 
@@ -89,7 +94,7 @@ return [
     |
     */
 
-    'middleware' => ['universal', 'web'],
+    'middleware' => ['universal', 'web', PreventAccessFromUnwantedDomains::class, InitializeTenancyBySubdomain::class],
 
     /*
     |--------------------------------------------------------------------------

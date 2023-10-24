@@ -1,0 +1,15 @@
+id: 50838
+name: testing-app
+environments:
+    production:
+        memory: 1024
+        cli-memory: 512
+        runtime: 'php-8.2:al2'
+        build:
+            - 'composer install --no-dev'
+            - 'php artisan config:clear'   # Clear config cache
+            - 'php artisan event:cache'
+            - 'php artisan optimize:clear' # Clear cached bootstrap files
+            - 'php artisan view:clear'     # Clear compiled views
+            - 'php artisan route:clear'    # Clear route cache
+          # - 'npm ci && npm run build && rm -rf node_modules'

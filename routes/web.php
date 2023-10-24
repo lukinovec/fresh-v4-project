@@ -1,6 +1,9 @@
 <?php
 
+use App\Livewire\Home;
 use Illuminate\Support\Facades\Route;
+use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromUnwantedDomains;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +16,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::middleware([
-    'universal',
     'web',
+    'universal',
 ])->group(function () {
     Route::get('/', function () {
-        return 'This is your multi-tenant application.' . tenant() ? ('The id of the current tenant is ' . tenant('id')) : '';
+        return 'This is your multi-tenant application.' . (tenant() ? ('The id of the current tenant is ' . tenant('id')) : '');
     });
-    Route::get('/foo', function () {
-        return 'foo route. ' . (tenant() ? 'The id of the current tenant is ' . tenant('id') : '');
-    });
+    Route::get('/home/{user?}', Home::class);
+});
+
+Route::middleware(['web', 'tenant'])->group(function () {
+    Route::get('/tenant', function ($tenant) {
+        return $tenant;
+    })->name('tenant');
+});
+
+Route::middleware(['web'])->group(function () {
+    Route::get('/central', function () {
+        return 'central route';
+    })->name('central');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware([
+    'web',
     'universal',
+    PreventAccessFromUnwantedDomains::class,
+    InitializeTenancyBySubdomain::class,
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
+    // InitializeTenancyByPath::class,
 ])->name('dashboard');

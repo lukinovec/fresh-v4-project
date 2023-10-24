@@ -1,7 +1,12 @@
 <?php
 
 use Laravel\Jetstream\Features;
+use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Laravel\Jetstream\Http\Middleware\AuthenticateSession;
+use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromUnwantedDomains;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
 
 return [
 
@@ -29,7 +34,7 @@ return [
      |
      */
 
-    'middleware' => ['universal', 'web'],
+    'middleware' => ['universal', 'web', PreventAccessFromUnwantedDomains::class, InitializeTenancyBySubdomain::class],
 
     'auth_session' => AuthenticateSession::class,
 
@@ -59,7 +64,7 @@ return [
 
     'features' => [
         // Features::termsAndPrivacyPolicy(),
-        // Features::profilePhotos(),
+        Features::profilePhotos(),
         // Features::api(),
         Features::teams(['invitations' => true]),
         Features::accountDeletion(),

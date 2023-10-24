@@ -13,9 +13,6 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- Styles -->
-        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <x-banner />
@@ -40,6 +37,13 @@
 
         @stack('modals')
 
-        @livewireScripts
+        <script>
+            window.tenantKey = {{ Js::from(tenant()?->getTenantKey()) }}
+            window.userId = {{ Js::from(auth()->user()->id) }}
+
+            if (window.tenantKey) {
+                window.skippedChannels = {{ Js::from(\Stancl\Tenancy\Bootstrappers\BroadcastChannelPrefixBootstrapper::$skippedChannels) }}
+            }
+        </script>
     </body>
 </html>
